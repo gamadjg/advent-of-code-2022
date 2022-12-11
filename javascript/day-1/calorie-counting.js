@@ -16,9 +16,9 @@ const readFile = (path) => {
 	let data = fs.readFileSync(__dirname + path, "utf-8");
 	data = data
 		.toString()
-		.split("\n")
+		.split("\r\n")
 		.map((val) => {
-			return val === "" ? "" : parseInt(val);
+			return val == "" ? "" : parseInt(val);
 		});
 	return data;
 };
